@@ -2,5 +2,7 @@
 setuptools = "*"
 leafmap = "*"
 shapely = "*"
+rasterio = "*"
+xarray = "*"
 
 USE_MKDOCS=1
