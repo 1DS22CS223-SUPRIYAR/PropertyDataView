@@ -108,8 +108,13 @@ class ResortLayout:
             with cont1:
                 st.markdown("### Report")
                 if selected_resort != "Overview":
-                    area = resort_data[selected_resort]["properties"]["Area(sqft)"]
-                    st.markdown(f"Area (sq feet): ***{area}***")
+                    e_area = resort_data[selected_resort]["properties"]["E.Area(sqft)"]
+                    p_area = resort_data[selected_resort]['properties']['P.Area(sqft)']
+                    type = resort_data[selected_resort]["properties"]["Type"]
+                    st.markdown(f"P.Area (sq feet): ***{p_area}***")
+                    st.markdown(f"E.Area (sq feet): ***{e_area}***")
+                    st.markdown(f"Type: ***{type}***")
+        
               
 
 def main():

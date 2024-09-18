@@ -104,11 +104,13 @@ class PlotsLayout:
                 st.markdown("### Report")
                 if selected_plot != "Overview":
                     plot_id = plot_data[selected_plot]["properties"]["id"]
-                    area = plot_data[selected_plot]["properties"]["Area(sqft)"]
+                    e_area = plot_data[selected_plot]["properties"]["E.Area(sqft)"]
+                    p_area = plot_data[selected_plot]['properties']['P.Area(sqft)']
                     type = plot_data[selected_plot]["properties"]["Type"]
                     status = plot_data[selected_plot]["properties"]["Status"]
                     st.markdown(f"Plot: ***{plot_id}***")
-                    st.markdown(f"Area (sq feet): ***{area}***")
+                    st.markdown(f"P.Area (sq feet): ***{p_area}***")
+                    st.markdown(f"E.Area (sq feet): ***{e_area}***")
                     st.markdown(f"Type: ***{type}***")
                     st.markdown(f"Status: ***{status}***")
               
