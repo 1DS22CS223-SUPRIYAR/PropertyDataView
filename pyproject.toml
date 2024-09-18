@@ -4,5 +4,6 @@ leafmap = "*"
 shapely = "*"
 rasterio = "*"
 xarray = "*"
+localtileserver = "*"
 
 USE_MKDOCS=1
