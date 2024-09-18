@@ -1,5 +1,6 @@
 [tool.poetry.dependencies]
 setuptools = "*"
 leafmap = "*"
+shapely = "*"
 
 USE_MKDOCS=1
