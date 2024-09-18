@@ -1,4 +1,5 @@
 [tool.poetry.dependencies]
+setuptools = "*"
 leafmap = "*"
 
 USE_MKDOCS=1
