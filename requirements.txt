@@ -3,3 +3,4 @@ leafmap
 shapely
 xarray
 rasterio
+localtileserver
