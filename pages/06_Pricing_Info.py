@@ -1,5 +1,5 @@
 import streamlit as st
-from components import Config
+from Components.components import Config
 
 def create_pricing_info():
 

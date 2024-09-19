@@ -4,7 +4,7 @@ import streamlit as st
 import leafmap.foliumap as leafmap
 import json
 from shapely.geometry import shape
-from components import Config
+from Components.components import Config
 
 class PlotsLayout:
 

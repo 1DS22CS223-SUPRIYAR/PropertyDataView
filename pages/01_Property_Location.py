@@ -5,7 +5,7 @@ import streamlit as st
 import leafmap.foliumap as leafmap
 import json
 import csv
-from components import Config
+from Components.components import Config
 
 class MyPropertyLocation:
     @staticmethod
@@ -33,7 +33,7 @@ class MyPropertyLocation:
         }
     
     @staticmethod
-    def create_my_property_location_content(file, general_info_file):
+    def create_my_property_location_content(file, general_info_file, raster_file):
         #Default Configuration
         Config.configure(title = "Project Location")
         Config.app_sidebar()
@@ -95,7 +95,7 @@ class MyPropertyLocation:
             m = leafmap.Map(zoom = 10)
             m.add_basemap("SATELLITE")
             m.add_legend(title="Plot Status And Type", legend_dict=legend_dict)
-            m.add_raster("data/ProjectLocation.tif", opacity = 0.8, layer_name="Project Overview")
+            m.add_raster(raster_file, opacity = 0.8, layer_name="Project Overview")
             m.add_geojson(file, style_function = MyPropertyLocation.styleFunction, layer_name="Plots", show_layer=False)
             m.to_streamlit(height=500)
         with col4:
@@ -108,7 +108,7 @@ class MyPropertyLocation:
                 st.markdown(f"Sites Sold: ***{no_of_sites_sold}***")
 
 def main():
-    MyPropertyLocation.create_my_property_location_content(file = "data/Kudur_Plots_Data.geojson", general_info_file = 'data/general_data.csv')
+    MyPropertyLocation.create_my_property_location_content(file = "data/Kudur_Plots_Data.geojson", general_info_file = 'data/general_data.csv', raster_file = "data/ProjectLocation.tif")
 
 if __name__ == '__main__':
     main()

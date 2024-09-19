@@ -1,7 +1,7 @@
 import streamlit as st
 import leafmap.foliumap as leafmap
 import json
-from components import Config
+from Components.components import Config
 
 Config.configure(title = "Property Data Visualization")
 

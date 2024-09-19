@@ -30,6 +30,9 @@ class Config:
     @staticmethod
     def app_sidebar():
         sidebar = st.sidebar
-        sidebar.image("data/Images/bhuh_pramaan_logo.jpg", caption=None)
+        sidebar.markdown(" <br></br> ", unsafe_allow_html=True)
+        col1 = st.sidebar.columns([1, 3, 1])[1]  
+        col1.image("data/Images/bhuh_pramaan_logo.jpg", use_column_width=True)
+        col1.markdown("[bhuhpramaan.com](https://www.bhuhpramaan.com/)")
         return None
         
