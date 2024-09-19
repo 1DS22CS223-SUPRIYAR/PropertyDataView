@@ -1,7 +1,7 @@
 setuptools
+psutil
 leafmap
 shapely
 xarray
 rasterio
 localtileserver
-psutil
