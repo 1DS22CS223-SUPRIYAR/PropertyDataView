@@ -21,9 +21,6 @@ class Config:
                     background-color: #D2E0FB;
                     padding: 10px;
                 }
-                .col4{
-                    background: #EAE4DD;
-                }
                 </style>
                 """, unsafe_allow_html=True)
         

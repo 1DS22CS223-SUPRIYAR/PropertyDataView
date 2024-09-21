@@ -3,6 +3,7 @@ import leafmap.foliumap as leafmap
 import json
 from Components.components import Config
 
+
 Config.configure(title = "Property Data Visualization")
 
 def main():
@@ -22,7 +23,7 @@ def app_body():
         }
         </style>
         """, unsafe_allow_html=True)
-
+    st.markdown("<h1 style = 'text-align: center;'> M/S Vinayaka Housing </h1>" , unsafe_allow_html=True)
     st.markdown("<h1 class='centered-heading'>About Us</h1>", unsafe_allow_html=True)
 
     st.markdown("""
@@ -62,7 +63,7 @@ def app_body():
         <ul style="text-align: left; margin: 0 auto; display: inline-block;">
             <li><strong>Email</strong>: contact@vinayakahousing.com</li>
             <li><strong>Phone</strong>: +123-456-7890</li>
-            <li><strong>Address</strong>: 123 Housing Lane, City, State, Country</li>
+            <li><strong>Address</strong>: Kuduru, Magadi, Ramanagara, Karnataka</li>
         </ul>
         </div>
         <div class='content'>
