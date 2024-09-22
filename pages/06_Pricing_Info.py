@@ -29,8 +29,8 @@ def create_pricing_info():
 
     st.markdown("## Ready to Invest?")
     st.markdown("""
-    - **Contact Us**: [Inquire Now](#) to get more details about the land options.
-    - **Site Visits**: Schedule a site visit by [Contacting Us](#) directly.
+    - **Contact Us**: [Inquire Now](https://www.bhuhpramaan.com/) to get more details about the land options.
+    - **Site Visits**: Schedule a site visit by [Contacting Us](https://www.bhuhpramaan.com/) directly.
     """)
 
 def main():

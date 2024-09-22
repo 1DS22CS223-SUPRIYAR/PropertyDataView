@@ -62,7 +62,7 @@ class NearByAmenities:
             "Other": "yellow"
         }  
 
-        amenities = {"School": "data/Schools.geojson", "Banks": "data/Schools.geojson","Bus Stop": "data/Schools.geojson", "Railway": "data/Schools.geojson", "Highway": "data/Schools.geojson", "Airport": "data/Schools.geojson"}    
+        amenities = {"Schools": "data/Schools.geojson", "Banks": "data/Schools.geojson","Bus Stop": "data/Schools.geojson", "Railway": "data/Schools.geojson", "Highway": "data/Schools.geojson", "Airport": "data/Schools.geojson"}    
 
         #Start Of Page Content
         st.markdown("<h1 style = 'text-align: center;'> M/S Vinayaka Housing </h1>" , unsafe_allow_html=True)
@@ -78,7 +78,7 @@ class NearByAmenities:
         col1, col2, col3, col4 = st.columns([1, 1, 1, 1])
 
         if col1.button("Schools", use_container_width=True):
-            selected_amenity = "School"   
+            selected_amenity = "Schools"   
             
         if col1.button("Railway",use_container_width=True):
             selected_amenity = "Railway"
@@ -113,6 +113,12 @@ class NearByAmenities:
             m.to_streamlit(height=500)
         with col6:
             cont1 = st.container(border = True)
+            
+            if selected_amenity != "Property":
+                cont1.markdown(f"### {selected_amenity}")
+                for amenity in amenity_data["features"]:
+                    name = amenity["properties"]["Name"]
+                    cont1.markdown(f"{name}")
         
 
 def main():
