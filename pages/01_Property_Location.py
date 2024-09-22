@@ -2,11 +2,11 @@
 #------Default Styles Are Imported From "components.py" File-----
 
 import streamlit as st
-import leafmap.leafmap as leafmap
+import leafmap.foliumap as leafmap
 import json
 import csv
 from Components.components import Config
-import rasterio
+
 
 class MyPropertyLocation:
     @staticmethod
@@ -38,14 +38,6 @@ class MyPropertyLocation:
         #Default Configuration
         Config.configure(title = "Project Location")
         Config.app_sidebar()
-        def get_raster_bounds(tif_file):
-            with rasterio.open(tif_file) as dataset:
-                bounds = dataset.bounds
-                lower_left = (bounds.left, bounds.bottom)  # Lower-left corner (x, y)
-                upper_right = (bounds.right, bounds.top)   # Upper-right corner (x, y)
-                
-                return lower_left, upper_right
-        ll_bounds, ur_bounds = get_raster_bounds(raster_file)
 
         #Data
         with open(general_info_file, mode='r') as gf:
@@ -104,7 +96,6 @@ class MyPropertyLocation:
             m = leafmap.Map(zoom = 10)
             m.add_basemap("SATELLITE")
             m.add_legend(title="Plot Status And Type", legend_dict=legend_dict)
-            m.image_overlay("data/Images/ProjectLocation.jpeg", bounds = (ll_bounds, ur_bounds), name = "Project Overview image" )
             m.add_raster(raster_file, opacity = 0.8, layer_name = "Project Overview")
             m.add_geojson(file, style_function = MyPropertyLocation.styleFunction, layer_name="Plots", show_layer=False)
             m.to_streamlit(height=500)
