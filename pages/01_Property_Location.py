@@ -95,7 +95,7 @@ class MyPropertyLocation:
             m = leafmap.Map(zoom = 10)
             m.add_basemap("SATELLITE")
             m.add_legend(title="Plot Status And Type", legend_dict=legend_dict)
-            m.add_raster(raster_file, opacity = 0.8, layer_name="Project Overview")
+            m.add_raster(raster_file, opacity = 0.8, layer_name = "Project Overview")
             m.add_geojson(file, style_function = MyPropertyLocation.styleFunction, layer_name="Plots", show_layer=False)
             m.to_streamlit(height=500)
         with col4:

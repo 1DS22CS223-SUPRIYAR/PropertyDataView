@@ -5,3 +5,4 @@ shapely
 xarray
 rasterio
 localtileserver
+xarray_leaflet
